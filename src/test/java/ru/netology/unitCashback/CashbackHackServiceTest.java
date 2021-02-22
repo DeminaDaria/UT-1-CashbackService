@@ -10,8 +10,8 @@ public class CashbackHackServiceTest {
     public void shouldAmountMoreBoundary() {
         CashbackHackService hackService = new CashbackHackService();
 
-        int actual = 999;
-        int expected = hackService.remain(1001);
+        int actual = hackService.remain(1001);
+        int expected = 999;
 
         assertEquals(actual, expected);
     }
@@ -20,8 +20,8 @@ public class CashbackHackServiceTest {
     public void shouldAmountLessBoundary() {
         CashbackHackService hackService = new CashbackHackService();
 
-        int actual = 100;
-        int expected = hackService.remain(900);
+        int actual = hackService.remain(900);
+        int expected = 100;
 
         assertEquals(actual, expected);
     }
