@@ -1,8 +1,8 @@
 package ru.netology.unitCashback;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
-import static org.testng.Assert.*;
+import static org.junit.Assert.*;
 
 public class CashbackHackServiceTest {
 
@@ -10,19 +10,20 @@ public class CashbackHackServiceTest {
     public void shouldAmountMoreBoundary() {
         CashbackHackService hackService = new CashbackHackService();
 
-        int actual = hackService.remain(1001);
-        int expected = 999;
-
-        assertEquals(actual, expected);
+        assertEquals(999, hackService.remain(1001));
     }
 
     @Test
     public void shouldAmountLessBoundary() {
         CashbackHackService hackService = new CashbackHackService();
 
-        int actual = hackService.remain(900);
-        int expected = 100;
+        assertEquals(100, hackService.remain(900));
+    }
 
-        assertEquals(actual, expected);
+    @Test
+    public void shouldAmountEqualsBoundary() {
+        CashbackHackService hackService = new CashbackHackService();
+
+        assertEquals(0, hackService.remain(1000));
     }
 }
